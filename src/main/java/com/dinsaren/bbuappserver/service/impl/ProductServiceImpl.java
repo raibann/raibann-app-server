@@ -28,7 +28,7 @@ public class ProductServiceImpl implements ProductService {
         List<Product> list = productRepository.findAllByStatus(Constants.ACTIVE_STATUS);
         list.forEach(p->{
             ProductRes res = new ProductRes();
-            var category = categoryRepository.findById(res.getId());
+            var category = categoryRepository.findById(Long.valueOf(p.getCategoryId()));
             res.setData(p, category.get());
             listRes.add(res);
         });
@@ -55,7 +55,7 @@ public class ProductServiceImpl implements ProductService {
         ProductRes res = new ProductRes();
         Optional<Product> product = productRepository.findById(id);
         if(product.isPresent()) {
-            var category = categoryRepository.findById(res.getId());
+            var category = categoryRepository.findById(Long.valueOf(product.get().getCategoryId()));
             res.setData(product.get(), category.get());
             return res;
         }
@@ -68,7 +68,7 @@ public class ProductServiceImpl implements ProductService {
         List<Product> list = productRepository.findAllByCategoryIdAndStatus(id,Constants.ACTIVE_STATUS);
         list.forEach(p->{
             ProductRes res = new ProductRes();
-            var category = categoryRepository.findById(res.getId());
+            var category = categoryRepository.findById(Long.valueOf(p.getCategoryId()));
             res.setData(p, category.get());
             listRes.add(res);
         });
