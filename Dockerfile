@@ -13,7 +13,7 @@ ARG JAR_FILE=target/bbu-app-server-0.0.1-SNAPSHOT.jar
 WORKDIR /opt/bbu-app-server
 
 # cp target/spring-boot-web.jar /opt/app/app.jar
-COPY ${JAR_FILE} api-management-server.jar
+COPY ${JAR_FILE} bbu-app-server.jar
 
 EXPOSE 20033
 # java -jar /opt/app/app.jar
