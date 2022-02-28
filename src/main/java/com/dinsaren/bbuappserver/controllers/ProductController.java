@@ -21,20 +21,20 @@ public class ProductController {
     }
 
     @GetMapping("/public/product")
-    public ResponseEntity<?> getAllCategory() {
+    public ResponseEntity<?> getAllProduct() {
         List<ProductRes> list = service.findAll();
         return ResponseEntity.ok(new MessageRes("Get Data successful!", list));
     }
 
     @GetMapping("/public/product/{id}")
-    public ResponseEntity<?> getCategoryById(@PathVariable("id") Long id) {
+    public ResponseEntity<?> getProducyById(@PathVariable("id") Long id) {
         ProductRes res = service.findById(id);
         return ResponseEntity.ok(new MessageRes("Get Data successful!", res));
     }
 
     @GetMapping("/public/product/category/{id}")
-    public ResponseEntity<?> getProductByCategoryId(@PathVariable("id") Long id) {
-        ProductRes res = service.findById(id);
+    public ResponseEntity<?> getProductByCategoryId(@PathVariable("id") Integer id) {
+        List<ProductRes> res = service.findAllByCategoryId(id);
         return ResponseEntity.ok(new MessageRes("Get Data successful!", res));
     }
 }
