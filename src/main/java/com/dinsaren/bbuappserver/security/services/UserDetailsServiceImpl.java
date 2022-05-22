@@ -18,8 +18,14 @@ public class UserDetailsServiceImpl implements UserDetailsService {
   @Override
   @Transactional
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-    User user = userRepository.findByPhoneAndStatus(username, Constants.ACTIVE_STATUS)
-        .orElseThrow(() -> new UsernameNotFoundException("User Not Found with phone: " + username));
+    User user;
+    var userName = userRepository.findByUsernameAndStatus(username, Constants.ACTIVE_STATUS);
+    if(userName.isEmpty()){
+      user = userRepository.findByPhoneAndStatus(username, Constants.ACTIVE_STATUS)
+              .orElseThrow(() -> new UsernameNotFoundException("User Not Found with phone: " + username));
+    }else{
+      user = userName.get();
+    }
 
     return UserDetailsImpl.build(user);
   }
