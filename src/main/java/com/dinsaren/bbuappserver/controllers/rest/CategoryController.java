@@ -1,4 +1,4 @@
-package com.dinsaren.bbuappserver.controllers;
+package com.dinsaren.bbuappserver.controllers.rest;
 
 import com.dinsaren.bbuappserver.payload.response.CategoryRes;
 import com.dinsaren.bbuappserver.payload.response.MessageRes;

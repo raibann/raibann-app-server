@@ -1,4 +1,4 @@
-package com.dinsaren.bbuappserver.controllers;
+package com.dinsaren.bbuappserver.controllers.rest;
 
 import com.dinsaren.bbuappserver.constants.Constants;
 import com.dinsaren.bbuappserver.exception.TokenRefreshException;

@@ -1,4 +1,4 @@
-package com.dinsaren.bbuappserver.controllers;
+package com.dinsaren.bbuappserver.controllers.rest;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
