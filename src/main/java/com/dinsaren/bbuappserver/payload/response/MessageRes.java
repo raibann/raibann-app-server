@@ -3,6 +3,10 @@ package com.dinsaren.bbuappserver.payload.response;
 public class MessageRes {
 	private String message;
 	private Object data;
+
+	public MessageRes() {
+	}
+
 	public MessageRes(String message, Object data) {
 	    this.message = message;
 	    this.data = data;
