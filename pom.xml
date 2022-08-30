@@ -9,11 +9,11 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.dinsaren</groupId>
-    <artifactId>bbu-app-server</artifactId>
+    <artifactId>raibnn-app-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>bbu-app-server</name>
     <packaging>war</packaging>
-    <description>bbu-app-server</description>
+    <description>raibann-app-server</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
